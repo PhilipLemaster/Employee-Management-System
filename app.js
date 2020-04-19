@@ -2,9 +2,21 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const consoleTable = require('console.table');
 
+var connection = mysql.createConnection({
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: 'root64',
+    database: 'employeeDB'
+});
+  
+connection.connect(function(err){
+    if(err) throw err;
+    runProgram();
+});
 
 function runProgram() {
-    displayEmployees();
+    // displayEmployees();
     askInput();
 }
 
@@ -37,3 +49,11 @@ function askInput() {
             }
         })
 }
+
+function readEmployees() {
+    connection.query('SELECT * FROM employee', function(err,res){
+      console.log(res);
+      connection.end();
+    })
+}
+
