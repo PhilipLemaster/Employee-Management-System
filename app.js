@@ -57,3 +57,24 @@ function readEmployees() {
     })
 }
 
+function writeEmployee() {
+    inquirer
+        .prompt ([
+            {
+                name: 'firstName',
+                message: "What is the employee's first name?"
+            },
+
+            {
+                name: 'lastName',
+                message: "What is the employee's last name?"
+            }
+
+        ])
+    
+        .then(response => {
+            connection.query(`INSERT INTO employee (first_name, last_name) VALUES ('${response.firstName}','${response.lastName}')`, function(err,res){
+                console.log(`${response.firstName} ${response.lastName} added!`);
+            })
+        })
+}   
