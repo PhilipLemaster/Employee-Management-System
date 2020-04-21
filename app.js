@@ -73,8 +73,40 @@ function writeEmployee() {
         ])
     
         .then(response => {
-            connection.query(`INSERT INTO employee (first_name, last_name) VALUES ('${response.firstName}','${response.lastName}')`, function(err,res){
+            connection.query(`INSERT INTO employee (first_name, last_name, full_name) VALUES ('${response.firstName}','${response.lastName}', '${response.firstName} ${response.lastName}')`, function(err,res){
                 console.log(`${response.firstName} ${response.lastName} added!`);
+                connection.end();
             })
         })
-}   
+}
+
+function deleteEmployee() {
+
+    connection.query('SELECT full_name FROM employee', function(err,res){
+        names = [];
+        for (var y = 0; y < res.length; y++) {
+            names.push(`${res[y].full_name}`);
+        }
+
+        inquirer
+            .prompt ([
+                {
+                    type: 'list',
+                    name: 'deleteEmp',
+                    message: 'Which employee would you like to delete?',
+                    choices: names
+                }
+
+            ])
+    
+        .then(response => {
+            console.log(response.deleteEmp);
+            connection.query(`DELETE FROM employee WHERE full_name = '${response.deleteEmp}'`, function(err,res){
+                console.log(`${response.deleteEmp} deleted!`);
+                connection.end();
+            })
+        })
+      })
+    
+}
+
