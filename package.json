@@ -1,0 +1,26 @@
+{
+  "name": "Employee-Management-System",
+  "version": "1.0.0",
+  "description": "![badge image](https://img.shields.io/badge/Application-Manager-yellowgreen \"Project Badge\")\r # Employee Management System\r ***\r ## Description\r Command line application interface that allows users to manage employees, departments, and roles via CRUD methodologies.\r ***\r ## Table of Contents\r - Installation\r - Usage\r - Licensing Info\r - Contributions\r - Tests\r - Creator Info\r ***\r ## Installation Requirements\r This app runs using node.js and requires mysql, inquirer, and console.table npm packages in order to operate properly.\r ***\r ## Usage\r Usage is open to any and everyone interested in using this simple application.\r ***\r ## Licensing Info\r This project does not contain a license\r ***\r ## Contributions\r Any contributions are welcome, as I encountered more than a few issues that restricted the efficiency of the final product.\r ***\r ## Tests\r This project does not feature any tests.\r ***\r ## Github Creator Info\r ![profile image](https://avatars1.githubusercontent.com/u/59799371?v=4 \"Logo Title Text 1\")",
+  "main": "app.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.1.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipLemaster/Employee-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilipLemaster/Employee-Management-System/issues"
+  },
+  "homepage": "https://github.com/PhilipLemaster/Employee-Management-System#readme"
+}
